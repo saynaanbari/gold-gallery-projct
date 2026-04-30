@@ -1,5 +1,5 @@
-import Footer from "@/layout/footer/footer";
-import Header from "@/layout/header/header";
+import Footer from "@/layout/site-layout/footer";
+import Header from "@/layout/site-layout/header";
 
 export default function StoreLayout({
   children,

@@ -1,5 +1,5 @@
-import AdminFooter from "@/layout/admin-footer/admin-footer";
-import AdminHeader from "@/layout/admin-header/admin-header";
+import AdminFooter from "@/layout/admin-panel-layout/admin-panel-footer";
+import AdminHeader from "@/layout/admin-panel-layout/admin-panel-header";
 
 export default function AdminLayout({
   children,
