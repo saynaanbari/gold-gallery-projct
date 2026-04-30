@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+@theme {
+  --color-light: #fafafa;
+  --color-light-green: #bccc9a;
+  --color-dark-green: #687466;
+  --color-green: #728f5c;
+  --color-light-cream: #c1a986;
+}
+@font-face {
+  font-family: "Cairo";
+  src: url("../assets/fonts/Cairo/Cairo-VariableFont_slnt\,wght.ttf");
+}
+body {
+  font-family: "Cairo";
+}
