@@ -1,3 +1,8 @@
-export default function AdminHomePage() {
-  return <div>صفحه هوم پنل ادمین</div>;
+import StatsCards from "@/components/admin/home/components/stats-cards";
+export default function AdminPanelHomePage() {
+  return (
+    <>
+      <StatsCards />
+    </>
+  );
 }
