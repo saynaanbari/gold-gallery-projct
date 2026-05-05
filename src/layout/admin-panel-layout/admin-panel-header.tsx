@@ -8,9 +8,9 @@ import { useState } from "react";
 export default function AdminPanelHeader() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="w-full py-5 bg-light shadow shadow-dark-blue flex justify-between px-5 lg:px-10">
+    <header className="w-full py-5 bg-light shadow shadow-blue flex justify-between px-5 lg:px-10">
       <div className="font-bold hidden md:block">
-        به<strong className="text-dark-blue"> پنل ادمین</strong> خوش آمدید
+        به<strong className="text-light-orange"> پنل ادمین</strong> خوش آمدید
       </div>
       <div className="md:hidden flex gap-1 items-center">
         <AdminMobileMenu />

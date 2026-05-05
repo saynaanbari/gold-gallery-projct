@@ -6,8 +6,10 @@
   --color-dark-green: #687466;
   --color-green: #728f5c;
   --color-light-cream: #c1a986;
-  --color-dark-blue : #89A8B2;
-  --color-light-blue : #E5EEE4
+  --color-blue: #145374;
+  --color-light-blue: #d8eff0;
+  --color-light-orange: #ea907a;
+  --color-green: #61794e;
 }
 @font-face {
   font-family: "Cairo";

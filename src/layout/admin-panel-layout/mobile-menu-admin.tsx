@@ -4,11 +4,11 @@ import menu from "@/assets/svg/menu01.svg";
 import { useState } from "react";
 import Link from "next/link";
 
-export default function AdminMobileMenu() {
+export default function dashboardMobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const closeMenu = () => setIsOpen(false);
   return (
-    <div>
+    <div className="">
       <button className="relative w-7 h-7" onClick={() => setIsOpen(true)}>
         <Image src={menu} alt="" fill className="object-cover" />
       </button>
@@ -19,7 +19,7 @@ export default function AdminMobileMenu() {
         />
       )}
       <div
-        className={`fixed top-0 right-0 w-1/2 h-screen bg-dark-blue z-50 shadow transition-transform duration-300
+        className={`fixed top-0 right-0 w-1/2 h-screen bg-blue z-50 shadow transition-transform duration-300
       ${isOpen ? "translate-x-0" : "translate-x-full"}
         `}
       >
@@ -33,54 +33,47 @@ export default function AdminMobileMenu() {
               ✕
             </button>
           </div>
-          <ul className="flex flex-col gap-7 font-bold text-white">
-            <li>
-              <Link href="/admin" onClick={closeMenu}>
+          <ul className="flex flex-col gap-10 font-bold text-white">
+            <li className="flex items-center gap-1">
+              <div className="w-5 h-5">🏡</div>
+              <Link href="/dashboard" onClick={closeMenu}>
                 داشبورد
               </Link>
             </li>
 
-            <li>
+            <li className="flex items-center gap-1">
+              <div className="w-5 h-5">🛍️</div>
               <Link
-                href="/admin/products"
+                href="/dashboard/products"
                 onClick={closeMenu}
                 className="hover:underline decoration-2 underline-offset-4"
               >
                 محصولات
               </Link>
             </li>
-
-            <li>
-              <Link href="/admin/orders" onClick={closeMenu}>
+            <li className="flex items-center gap-1">
+              <div className="w-5 h-5">📦</div>
+              <Link href="" onClick={closeMenu}>
+                موجودی کالا
+              </Link>
+            </li>
+            <li className="flex items-center gap-1">
+              <div className="w-5 h-5">🚚</div>
+              <Link href="/dashboard/orders" onClick={closeMenu}>
                 سفارشات
               </Link>
             </li>
-
-            <li>
+            <li className="flex items-center gap-1">
+              <div className="w-5 h-5">👥</div>
               <Link href="" onClick={closeMenu}>
                 مشتریان
               </Link>
             </li>
 
-            <li>
-              <Link href="" onClick={closeMenu}>
-                موجودی کالا
-              </Link>
-            </li>
-
-            <li>
+            <li className="flex items-center gap-1">
+              <div className="w-5 h-5">📊</div>
               <Link href="" onClick={closeMenu}>
                 گزارشات
-              </Link>
-            </li>
-            <li>
-              <Link href="" onClick={closeMenu}>
-                حساب ها
-              </Link>
-            </li>
-            <li>
-              <Link href="" onClick={closeMenu}>
-                تبلیغات فروش
               </Link>
             </li>
           </ul>
