@@ -1,10 +1,16 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
-import icon from "@/assets/svg/heart.svg";
-import { usePathname } from "next/navigation";
+import Cookies from "js-cookie";
+import { usePathname, useRouter } from "next/navigation";
+
 export default function AdminPanelSidebar() {
   const pathname = usePathname();
+  const router = useRouter();
+  const handleLogout = () => {
+    Cookies.remove("token", { path: "/" });
+    Cookies.remove("role", { path: "/" });
+    router.replace("/my-secret-panel-15j30k");
+  };
   return (
     <div className="bg-blue w-60 h-screen p-6">
       <ul className="flex flex-col gap-7 text-white">
@@ -47,7 +53,10 @@ export default function AdminPanelSidebar() {
         </li>
       </ul>
 
-      <button className=" w-47 py-3 rounded-xl cursor-pointer fixed bottom-5 bg-[#d8eff03b]  hover:bg-[#d8eff05d] font-bold text-sm text-white">
+      <button
+        className=" w-47 py-3 rounded-xl cursor-pointer fixed bottom-5 bg-[#d8eff03b]  hover:bg-[#d8eff05d] font-bold text-sm text-white"
+        onClick={handleLogout}
+      >
         خروج از حساب کاربری
       </button>
     </div>
