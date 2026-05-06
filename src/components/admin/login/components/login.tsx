@@ -27,9 +27,12 @@ export default function AdminLogin() {
       Cookies.set("role", result.data.user.role, {
         expires: 1,
       });
-      toast.success("با موفقیت وارد شدید");
       router.replace("/dashboard");
-    } catch (error) {
+      toast.success("با موفقیت وارد شدید");
+    } catch (error: any) {
+      if (error.response?.status === 401) {
+        toast.error("ایمیل یا پسورد اشتباه است");
+      }
       console.error(error);
     }
   };

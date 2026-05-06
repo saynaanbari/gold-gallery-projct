@@ -1,5 +1,6 @@
 import AdminPanelHeader from "@/layout/admin-panel-layout/admin-panel-header";
 import AdminPanelSidebar from "@/layout/admin-panel-layout/admin-panel-sidebar";
+import GlobalToaster from "@/shared/toast/toast";
 
 export default function AdminPanelLayout({
   children,
@@ -8,6 +9,7 @@ export default function AdminPanelLayout({
 }) {
   return (
     <div className="h-screen overflow-hidden">
+      <GlobalToaster />
       <div className="hidden md:block fixed right-0 top-0 bottom-0 w-64 z-20">
         <AdminPanelSidebar />
       </div>
