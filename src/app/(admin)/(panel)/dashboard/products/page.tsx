@@ -1,3 +1,9 @@
+import ProductPage from "@/components/admin/products/components/page";
+
 export default function AdminPanelProductsPage() {
-  return <div>صفحه محصولات ادمین</div>;
+  return (
+    <div>
+      <ProductPage />
+    </div>
+  );
 }
