@@ -31,7 +31,7 @@ export default function OrdersPagination({
           قبلی
         </Link>
       )}
-      <div className="w-20 text-center font-bold text-sm">
+      <div className="w-30 text-center font-bold text-sm">
         صفحه {currentPage} از {totalPages}
       </div>
 
