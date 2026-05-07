@@ -20,13 +20,9 @@ export default function AdminLogin() {
     try {
       const response = await api.post("/auth/login", data);
       const result = response.data;
-      Cookies.set("token", result.data.token, {
-        expires: 1,
-      });
-
-      Cookies.set("role", result.data.user.role, {
-        expires: 1,
-      });
+      Cookies.set("token", result.data.token, {expires: 1,});
+      Cookies.set("refreshToken", result.data.refreshToken, { expires: 7 });
+      Cookies.set("role", result.data.user.role, {expires: 1,});
       router.replace("/dashboard");
       toast.success("با موفقیت وارد شدید");
     } catch (error: any) {
