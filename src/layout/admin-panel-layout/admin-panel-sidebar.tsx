@@ -8,6 +8,7 @@ export default function AdminPanelSidebar() {
   const router = useRouter();
   const handleLogout = () => {
     Cookies.remove("token", { path: "/" });
+    Cookies.remove("refreshToken", { path: "/" });
     Cookies.remove("role", { path: "/" });
     router.replace("/my-secret-panel-15j30k");
   };
