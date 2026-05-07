@@ -1,12 +1,20 @@
 "use client";
 import Image from "next/image";
 import menu from "@/assets/svg/menu01.svg";
+import Cookies from "js-cookie";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function dashboardMobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const closeMenu = () => setIsOpen(false);
+  const router = useRouter();
+   const handleLogout = () => {
+     Cookies.remove("token", { path: "/" });
+     Cookies.remove("role", { path: "/" });
+     router.replace("/my-secret-panel-15j30k");
+   };
   return (
     <div className="">
       <button className="relative w-7 h-7" onClick={() => setIsOpen(true)}>
@@ -78,6 +86,12 @@ export default function dashboardMobileMenu() {
             </li>
           </ul>
         </div>
+        <button
+          className=" w-47 py-3 rounded-xl cursor-pointer fixed bottom-5 right-4 bg-[#d8eff03b]  hover:bg-[#d8eff05d] font-bold text-sm text-white"
+          onClick={handleLogout}
+        >
+          خروج از حساب کاربری
+        </button>
       </div>
     </div>
   );
