@@ -1,3 +1,9 @@
+import InventoryPage from "@/components/admin/inventory/components/page";
+
 export default function AdminPanelInventoryPage() {
-  return <div>صفحه موجودی پنل ادمین</div>;
+  return (
+    <>
+      <InventoryPage />
+    </>
+  );
 }
