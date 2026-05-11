@@ -9,7 +9,7 @@ export default function CategorySection() {
     <div className="flex flex-col gap-7 md:gap-5 items-center mb-20">
       <div className="flex items-center gap-5">
         <Image src={rightStar} alt={""} width={120} height={10} />
-        <h2 className="font-bold lg:text-lg">دسته بندی محصولات</h2>
+        <h2 className="font-bold lg:text-[20px]">دسته بندی محصولات</h2>
         <Image src={leftStar} alt={""} width={120} height={10} />
       </div>
       <div className="w-full grid grid-cols-3 md:grid-cols-3 md:justify-items-center gap-5 lg:grid-cols-6 px-5 py-2">
