@@ -1,6 +1,7 @@
 import CategorySection from "@/components/store/home/components/category-section";
 import HeroSection from "@/components/store/home/components/hero-section";
 import LatestProducts from "@/components/store/home/components/latest-products";
+import PopularProducts from "@/components/store/home/components/popular-products";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <CategorySection/>
       <LatestProducts/>
+      <PopularProducts/>
     </div>
   );
 }

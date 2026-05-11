@@ -1,7 +1,7 @@
 import "swiper/css";
 import "swiper/css/autoplay";
 import Image from "next/image";
-import cart from "@/assets/svg/cart-shopping.svg";
+import cart from "@/assets/svg/cart-outline.svg";
 import { ProductType } from "@/types/product-type";
 import AddButton from "../buttons/add-button";
 

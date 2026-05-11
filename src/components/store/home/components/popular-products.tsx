@@ -8,21 +8,18 @@ import { ProductType } from "@/types/product-type";
 import { getProducts } from "../services/get-products";
 import ProductsCard from "@/shared/cards/products-card";
 
-export default function LatestProducts() {
+export default function PopularProducts() {
   const [products, setProducts] = useState<ProductType[]>([]);
   useEffect(() => {
     async function fetchProducts() {
       try {
         const result = await getProducts();
-        const newestProduct: ProductType[] = [...result.data]
-          .sort(
-            (a, b) =>
-              new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
-          )
+        const popularProducts: ProductType[] = [...result.data]
+          .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0))
           .slice(0, 8);
-        setProducts(newestProduct);
+        setProducts(popularProducts);
       } catch (error) {
-        console.error("خطا در گرفتن داده ها", error);
+        console.error("خطا در دریافت محصولات", error);
         throw error;
       }
     }
@@ -32,7 +29,7 @@ export default function LatestProducts() {
     <div className="w-full px-10 md:px-0 mb-25">
       <div className="relative">
         <h3 className="font-bold text-xl mb-8 lg:text-[20px] relative z-10">
-          جدیدترین محصولات
+         پرطرفدار ترین محصولات
         </h3>
         <div className="bg-light-green w-16 h-5 absolute top-3.5 rounded-md"></div>
       </div>
