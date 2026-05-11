@@ -9,7 +9,7 @@ import "swiper/swiper.css";
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full h-80 md:h-130 lg:h-115 md:mt-8 lg:mt-6 mb-20">
+    <div className="relative w-full h-80 md:h-130 lg:h-115 mb-10 lg:mt-6 lg:mb-20">
       <Swiper
         modules={[Autoplay]}
         spaceBetween={0}
