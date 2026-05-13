@@ -10,7 +10,7 @@ export default function ProductsCard({ item }: { item: ProductType }) {
     <div className="bg-white border border-gray-200 shadow  p-3 hover:-translate-y-1 hover:transition-all duration-500 ease-in-out ">
       <div className="relative w-full h-75 shadow">
         <Image
-          src={`http://localhost:5000${item.images[1]}`}
+          src={`http://localhost:5000${item.images[1] || item.images[0]}`}
           alt={""}
           fill
           className="object-cover cursor-pointer hover:opacity-10 transition-opacity"
