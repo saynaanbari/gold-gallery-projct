@@ -38,7 +38,7 @@ export default function InventoryTable({ products }: { products: ProductType[] }
               </td>
               <td className="w-full h-full flex justify-center items-center">
                 <Image
-                  src={`http://localhost:5000${product.images[1]}`}
+                  src={`http://localhost:5000${product.images[1] || product.images[0]}`}
                   alt={""}
                   width={65}
                   height={65}
