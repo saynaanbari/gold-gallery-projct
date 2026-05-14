@@ -32,7 +32,8 @@ export default function ProductsPagination({
         </Link>
       )}
       <div className="w-30 text-center font-bold text-sm">
-        صفحه {currentPage} از {totalPages}
+        صفحه {currentPage.toLocaleString("fa-IR")} از
+        {totalPages.toLocaleString("fa-IR")}
       </div>
 
       {currentPage === totalPages ? (

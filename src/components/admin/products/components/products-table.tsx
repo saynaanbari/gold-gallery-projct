@@ -1,12 +1,15 @@
 import Image from "next/image";
 import trash from "@/assets/svg/delete.svg";
-import edit from "@/assets/svg/edit.svg";
+
 import { ProductType } from "@/types/product-type";
+import EditProductsModal from "./edit-products-modal";
 
 export default function ProductsTable({
   products,
+  onEditedProduct,
 }: {
   products: ProductType[];
+  onEditedProduct: () => void;
 }) {
   return (
     <div className="w-full shadow-lg overflow-x-auto">
@@ -58,22 +61,19 @@ export default function ProductsTable({
                 <div>{product.name}</div>
               </td>
               <td className="border border-blue text-xs font-bold px-4">
-                <div>{product.price},000,000 تومان</div>
+                <div>{product.price.toLocaleString("fa-IR")} تومان</div>
               </td>
               <td className="border border-blue text-xs font-bold px-4">
-                <div>{product.weight}گرم</div>
+                <div>{product.weight.toLocaleString("fa-IR")}گرم</div>
               </td>
               <td className="border border-blue text-xs font-bold px-4">
                 <div>{product.category}</div>
               </td>
               <td>
                 <div className="flex justify-center items-center gap-3 px-4">
-                  <Image
-                    src={edit}
-                    alt={""}
-                    width={20}
-                    height={20}
-                    className="cursor-pointer"
+                  <EditProductsModal
+                    onEditedSuccess={onEditedProduct}
+                    item={product}
                   />
                   <Image
                     src={trash}

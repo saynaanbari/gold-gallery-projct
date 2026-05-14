@@ -8,6 +8,7 @@ import { Controller, useForm } from "react-hook-form";
 import { createProduct } from "../services/create-product.service";
 import { CreateProductType } from "../types/create-product-types";
 import RichTextEditor from "@/shared/editor/text-editor";
+import toast from "react-hot-toast";
 
 export default function AddProductsModal({
   productAddedSuccess,
@@ -84,6 +85,7 @@ export default function AddProductsModal({
 
     formdata.append("description", data.description);
     await createProduct(formdata);
+    toast.success("افزودن محصول با موفقیت انجام شد")
     productAddedSuccess();
     handleCloseModal();
   };
@@ -111,7 +113,7 @@ export default function AddProductsModal({
       </button>
       {isOpen && (
         <div
-          className="fixed w-full h-full inset-0 bg-black/50 z-30 flex justify-center items-center px-2"
+          className="fixed w-full h-full inset-0 bg-black/50 backdrop-blur z-30 flex justify-center items-center px-2"
           onClick={handleCloseModal}
         >
           <form
