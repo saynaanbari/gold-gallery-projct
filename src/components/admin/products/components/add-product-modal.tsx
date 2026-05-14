@@ -183,7 +183,7 @@ export default function AddProductsModal({
                   <input
                     type="number"
                     className="border border-gray-300 w-full rounded-md p-2 text-[11px] placeholder:text-gray-500 placeholder:text-[10.5px] placeholder:font-bold outline-olive-green"
-                    placeholder="مثال : 1200000"
+                    placeholder="مثال : ۷۵٬۰۰۰٬۰۰۰"
                     {...register("price", {
                       required: "قیمت محصول اجباری است",
                       valueAsNumber: true,
@@ -201,7 +201,7 @@ export default function AddProductsModal({
                   <input
                     type="number"
                     className="border border-gray-300 w-full rounded-md p-2 text-[11px] placeholder:text-gray-500 placeholder:text-[10.5px] placeholder:font-bold outline-olive-green"
-                    placeholder="مثال : 10"
+                    placeholder="مثال : ۱۰"
                     {...register("stock", {
                       required: "موجودی محصول اجباری است",
                       valueAsNumber: true,
@@ -219,7 +219,7 @@ export default function AddProductsModal({
                   <input
                     type="number"
                     className="border border-gray-300 w-full rounded-md p-2 text-[11px] placeholder:text-gray-500 placeholder:text-[10.5px] placeholder:font-bold outline-olive-green"
-                    placeholder="مثال : 300000"
+                    placeholder="مثال :  ۰٫۰۵"
                     {...register("wagePerGram", {
                       required: "اجرت هر گرم اجباری است",
                       valueAsNumber: true,
@@ -237,7 +237,7 @@ export default function AddProductsModal({
                   <input
                     type="number"
                     className="border border-gray-300 w-full rounded-md p-2 text-[11px] placeholder:text-gray-500 placeholder:text-[10.5px] placeholder:font-bold outline-olive-green"
-                    placeholder="مثال : 5"
+                    placeholder="مثال : ۵"
                     {...register("weight", {
                       required: "وزن محصول اجباری است",
                       valueAsNumber: true,
@@ -304,8 +304,6 @@ export default function AddProductsModal({
                     {errors.images?.message}
                   </div>
                 </div>
-
-                {/* پیش‌نمایش تصاویر */}
                 {imagePreviews.length > 0 && (
                   <div className="mt-3 w-full">
                     <div className="text-xs font-bold text-gray mb-2">
