@@ -10,6 +10,11 @@
   --color-light-blue: #d8eff0;
   --color-light-orange: #ea907a;
   --color-green: #61794e;
+  --color-olive-green : #688658;
+  --color-red : #9E1F28;
+  --color-gray : #474747;
+  --color-light-white : #FBF8F2;
+  --color-warm-cream : #F2EAE1
 }
 @font-face {
   font-family: "Cairo";
