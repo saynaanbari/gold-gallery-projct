@@ -1,7 +1,14 @@
 import { ProductType } from "@/types/product-type";
 import Image from "next/image";
+import InventoryEditProductsModal from "./inventory-edit-modal";
 
-export default function InventoryTable({ products }: { products: ProductType[] }) {
+export default function InventoryTable({
+  products,
+  onEditedProduct,
+}: {
+  products: ProductType[];
+  onEditedProduct: () => void;
+}) {
   return (
     <div className="w-full shadow-lg overflow-x-auto">
       <table className="w-full min-w-200 mx-auto h-70">
@@ -24,6 +31,9 @@ export default function InventoryTable({ products }: { products: ProductType[] }
             </th>
             <th className="border border-blue p-2 text-white text-sm">
               موجودی
+            </th>
+            <th className="border border-blue p-2 text-white text-sm">
+              عملیات
             </th>
           </tr>
         </thead>
@@ -49,13 +59,19 @@ export default function InventoryTable({ products }: { products: ProductType[] }
                 <div>{product.name}</div>
               </td>
               <td className="border border-blue text-xs font-bold px-4">
-                <div>{product.price},000,000 تومان</div>
+                <div>{product.price.toLocaleString("FA-IR")} تومان</div>
               </td>
               <td className="border border-blue text-xs font-bold px-4">
-                <div>{product.weight}گرم</div>
+                <div>{product.weight.toLocaleString("FA-IR")}گرم</div>
               </td>
               <td className="border border-blue text-xs font-bold px-4">
-                <div>{product.stock} عدد</div>
+                <div>{product.stock.toLocaleString("FA-IR")} عدد</div>
+              </td>
+              <td>
+                <InventoryEditProductsModal
+                  onEditedSuccess={onEditedProduct}
+                  item={product}
+                />
               </td>
             </tr>
           ))}
