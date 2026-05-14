@@ -3,13 +3,16 @@ import trash from "@/assets/svg/delete.svg";
 
 import { ProductType } from "@/types/product-type";
 import EditProductsModal from "./edit-products-modal";
+import DeleteProductsModal from "./delete-products-modal";
 
 export default function ProductsTable({
   products,
   onEditedProduct,
+  onDeletedProduct,
 }: {
   products: ProductType[];
   onEditedProduct: () => void;
+  onDeletedProduct: () => void;
 }) {
   return (
     <div className="w-full shadow-lg overflow-x-auto">
@@ -75,12 +78,9 @@ export default function ProductsTable({
                     onEditedSuccess={onEditedProduct}
                     item={product}
                   />
-                  <Image
-                    src={trash}
-                    alt={""}
-                    width={20}
-                    height={20}
-                    className="cursor-pointer"
+                  <DeleteProductsModal
+                    item={product}
+                    onDeleteSuccess={onDeletedProduct}
                   />
                 </div>
               </td>

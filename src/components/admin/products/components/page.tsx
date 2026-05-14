@@ -45,7 +45,11 @@ export default function ProductPage() {
           </button>
         </div>
       </div>
-      <ProductsTable products={products} onEditedProduct={loadProducts} />
+      <ProductsTable
+        products={products}
+        onEditedProduct={loadProducts}
+        onDeletedProduct={loadProducts}
+      />
       <ProductsPagination currentPage={page} totalPages={totalPage} />
     </div>
   );
