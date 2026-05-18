@@ -15,7 +15,7 @@ export default function Menu() {
     router.replace(pathname);
   };
   return (
-    <div className="w-62.5 h-fit bg-white shadow-lg rounded-lg flex flex-col gap-6 p-5">
+    <div className="w-62.5 h-fit bg-white shadow-lg rounded-2xl flex flex-col gap-6 p-5">
       <div className="flex items-center justify-between border-b border-gray-300 pb-6">
         <div className="flex items-center gap-1.5">
           <Image src={filter} alt={""} className="w-6 h-6 cursor-pointer" />
