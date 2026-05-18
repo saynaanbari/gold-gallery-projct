@@ -13,14 +13,14 @@ export default function ProductsCard({ item }: { item: ProductType }) {
           src={`http://localhost:5000${item.images[1] || item.images[0]}`}
           alt={""}
           fill
-          className="object-cover cursor-pointer hover:opacity-10 transition-opacity"
+          className="object-cover cursor-pointer hover:opacity-10 transition-opacity duration-500"
           unoptimized
         />
         <Image
           src={`http://localhost:5000${item.images[0]}`}
           alt={""}
           fill
-          className="object-cover cursor-pointer absolute hover:opacity-0 transition-opacity"
+          className="object-cover cursor-pointer absolute hover:opacity-0 transition-opacity duration-500"
           unoptimized
         />
       </div>
