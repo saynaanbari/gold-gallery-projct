@@ -30,7 +30,7 @@ export default function Menu() {
             { label: "انگشتر", value: "ring" },
             { label: "آویز ساعت", value: "pendant" },
             { label: "گردنبند", value: "necklace" },
-            { label: "گوشواره", value: "earring" },
+            { label: "گوشواره", value: "earrings" },
             { label: "نیم ست", value: "halfset" },
           ]}
         />
