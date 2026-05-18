@@ -3,7 +3,7 @@ import { ProductResponseType } from "@/types/product-type";
 
 export async function getAllProducts(
   page: number,
-  limit: number = 9,
+  limit: number = 12,
   category?: string | string[],
   minPrice?: number,
   maxPrice?: number,
