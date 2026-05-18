@@ -39,7 +39,7 @@ export default function SubMenu({
   };
 
   return (
-    <div className="w-full pb-4 flex flex-col gap-8 border-b border-gray-300">
+    <div className="w-full pb-4 flex flex-col gap-5 border-b border-gray-300">
       <button
         className="w-full items-center flex justify-between font-bold text-sm"
         onClick={() => setIsOpen((prev) => !prev)}

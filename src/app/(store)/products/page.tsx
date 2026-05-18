@@ -18,7 +18,7 @@ export default async function ProductsPage({
 
   const data = await getAllProducts(
     Number(params.page) || 1,
-    Number(params.limit) || 9,
+    Number(params.limit) || 12,
     params.category,
     minPrice,
     maxPrice,
