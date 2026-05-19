@@ -19,9 +19,10 @@ export default function PriceFilter({ title }: { title: string }) {
   useEffect(() => {
     const min = searchParams.get("minPrice");
     const max = searchParams.get("maxPrice");
-
-    if (min) setMinPrice(Number(min));
-    if (max) setMaxPrice(Number(max));
+    setMinPrice(min ? Number(min) : MIN);
+    setMaxPrice(max ? Number(max) : MAX);
+    // if (min) setMinPrice(Number(min));
+    // if (max) setMaxPrice(Number(max));
   }, [searchParams]);
 
   const updateUrl = (min: number, max: number) => {

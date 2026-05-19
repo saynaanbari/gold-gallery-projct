@@ -43,15 +43,6 @@ export default function Menu() {
         <PriceFilter title={"محدوده قیمت"} />
         <WeightFilter title={"محدوده وزن"} />
       </div>
-      {/* <button
-        className="w-full flex items-center justify-center gap-1 py-2.5 bg-red-50 rounded-md hover:bg-red-100 transition cursor-pointer"
-        onClick={clearFilters}
-      >
-        <Image src={trash} alt={""} width={18} height={18} />
-        <div className="cursor-pointer text-sm font-bold text-red-600">
-          حذف فیلترها
-        </div>
-      </button> */}
     </div>
   );
 }
