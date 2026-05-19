@@ -18,9 +18,10 @@ export default function WeightFilter({ title }: { title: string }) {
   useEffect(() => {
     const min = searchParams.get("minWeight");
     const max = searchParams.get("maxWeight");
-
-    if (min) setMinWeight(Number(min));
-    if (max) setMaxWeight(Number(max));
+    setMinWeight(min ? Number(min) : MIN);
+    setMaxWeight(max ? Number(max) : MAX);
+    // if (min) setMinWeight(Number(min));
+    // if (max) setMaxWeight(Number(max));
   }, [searchParams]);
 
   const updateUrl = (min: number, max: number) => {

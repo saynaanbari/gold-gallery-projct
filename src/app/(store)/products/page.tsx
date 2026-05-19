@@ -34,7 +34,7 @@ export default async function ProductsPage({
         </div>
       )}
 
-      <div className="flex flex-col items-center gap-15 w-full">
+      <div className="flex flex-col items-center gap-15 w-fit">
         {isEmpty ? (
           <div className="w-full h-60 flex flex-col items-center justify-center gap-4">
             <div className="font-bold text-gray text-md">
