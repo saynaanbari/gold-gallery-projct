@@ -14,7 +14,7 @@ export default function ProductGallery({ images }: { images: string[] }) {
   };
   return (
     <div className="flex flex-col gap-3">
-      <div className="relative w-full h-96 lg:h-120 shadow rounded-lg">
+      <div className="relative w-full h-105 lg:h-120 shadow rounded-lg">
         <Image
           src={`http://localhost:5000${images[index]}`}
           alt=""
