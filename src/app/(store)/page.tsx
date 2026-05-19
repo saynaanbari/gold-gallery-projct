@@ -5,6 +5,7 @@ import LatestProducts from "@/components/store/home/components/latest-products";
 import PopularProducts from "@/components/store/home/components/popular-products";
 import TrustBadges from "@/components/store/home/components/trust-badges";
 import WhyChooseUs from "@/components/store/home/components/why-choose-us";
+import TopRatedSwiper from "../../components/store/home/components/top-rated";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <LatestProducts/>
       <PopularProducts/>
       <WhyChooseUs/>
+      <TopRatedSwiper/>
       <InstagramFollow/>
       <TrustBadges/>
     </div>
