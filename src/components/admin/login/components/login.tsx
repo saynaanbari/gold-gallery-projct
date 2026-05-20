@@ -7,9 +7,13 @@ import { api } from "@/api/axios";
 import Cookies from "js-cookie";
 import toast from "react-hot-toast";
 import { LoginRequest } from "@/types/login-type";
+import { useState } from "react";
+import eye from "@/assets/svg/eye.svg";
+import eyeSlash from "@/assets/svg/eye-slash.svg";
 
 export default function AdminLogin() {
   const searchParams = useSearchParams();
+  const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
   const {
     register,
@@ -76,10 +80,21 @@ export default function AdminLogin() {
               required: "رمز عبور الزامی است",
               minLength: { value: 6, message: "حداقل 6 کارکتر" },
             })}
-            type="password"
+            type={showPassword ? "text" : "password"}
             className="rounded-xl border border-gray-300 text-xs font-bold placeholder:text-[11px] pr-2 py-3  placeholder:text-gray-400 placeholder:font-bold outline-blue bg-[#E8F0FE]"
             placeholder="رمز عبور"
           />
+          <button
+            type="button"
+            onClick={() => setShowPassword((prev) => !prev)}
+            className="absolute left-2 top-1/2 -translate-y-1/2 cursor-pointer"
+          >
+            {showPassword ? (
+              <Image src={eyeSlash} alt={""} />
+            ) : (
+              <Image src={eye} alt={""} />
+            )}
+          </button>
           {errors.password && (
             <p className="text-[#D54062] text-[10px] font-bold absolute -bottom-4">
               {errors.password.message}
