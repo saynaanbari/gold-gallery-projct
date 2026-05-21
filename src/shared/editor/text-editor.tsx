@@ -175,7 +175,7 @@ export default function RichTextEditor({
 
         <EditorContent
           editor={editor}
-          className="h-30 text-xs"
+          className="h-30 text-xs overflow-y-auto"
         />
       </div>
     </div>
