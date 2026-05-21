@@ -39,13 +39,13 @@ export const categoryItems = [
     name: "نیم ست",
     enName: "Sets",
     src: halfSet,
-    slug: "halfSet",
+    slug: "halfset",
   },
   {
     id: 6,
     name: "دستبند",
     enName: "Bracelet",
     src: braceletImg,
-    slug: "Bracelet",
+    slug: "bracelet",
   },
 ];
