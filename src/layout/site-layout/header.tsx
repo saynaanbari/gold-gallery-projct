@@ -10,6 +10,7 @@ import Nav from "./nav";
 import MobileMenu from "./mobile-menu";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/context/authContext";
+import ProfileDropdown from "./profile-dropdown";
 
 export default function Header() {
   const { token, isLoading } = useAuth();
@@ -57,18 +58,24 @@ export default function Header() {
           <Link href="/cart" className="relative w-6 h-6 cursor-pointer">
             <Image src={cart} alt="" fill className="object-cover" />
           </Link>
-          <Link href="/auth" className="relative cursor-pointer">
-            <Image
-              src={profile}
-              alt="ورود"
-              className="md:hidden"
-              width={28}
-              height={28}
-            />
-            <button className="hidden md:block text-xs text-gray font-bold border border-light-green px-3 py-1.5 rounded-sm cursor-pointer">
-              ورود | عضویت
-            </button>
-          </Link>
+          {isLoading ? (
+            <div className="w-6 h-6 bg-gray-100 rounded-sm animate-pulse" />
+          ) : token ? (
+            <ProfileDropdown />
+          ) : (
+            <Link href="/auth" className="relative cursor-pointer">
+              <Image
+                src={profile}
+                alt="ورود"
+                className="md:hidden"
+                width={28}
+                height={28}
+              />
+              <div className="hidden md:block text-xs text-gray font-bold border border-gray-300 px-3 py-1.5 rounded-sm">
+                ورود | عضویت
+              </div>
+            </Link>
+          )}
         </div>
       </div>
       <Nav />
