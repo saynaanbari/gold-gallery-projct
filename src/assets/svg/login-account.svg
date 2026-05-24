@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!-- profile icon -->
+  <path fill="#3A4D3A" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+  
+  <!-- check circle -->
+  <circle cx="18" cy="18" r="5.5" fill="#bccc9a"/>
+  
+  <!-- check mark -->
+  <path d="M15.8 18L17.5 20L20.5 16.8"
+        fill="none" 
+        stroke="#ffffff" 
+        stroke-width="1.5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+</svg>
+
+
+

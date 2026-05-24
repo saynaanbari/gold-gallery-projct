@@ -9,8 +9,10 @@ import Link from "next/link";
 import Nav from "./nav";
 import MobileMenu from "./mobile-menu";
 import { usePathname } from "next/navigation";
+import { useAuth } from "@/context/authContext";
 
 export default function Header() {
+  const { token, isLoading } = useAuth();
    const pathname = usePathname();
    const hideHeader = ["/auth"];
    if (hideHeader.includes(pathname)) return null;
