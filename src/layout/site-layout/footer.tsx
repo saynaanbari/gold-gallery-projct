@@ -1,9 +1,16 @@
+"use client";
 import Image from "next/image";
 import trust from "@/assets/images/trustsymb2.png";
 import telegram from "@/assets/svg/telegram.svg";
 import instagram from "@/assets/svg/instageram.svg";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const hideFooter = ["/auth"];
+  if (hideFooter.includes(pathname)) {
+    return null;
+  }
   return (
     <footer className="w-full bg-light-green px-15 pt-10 flex flex-col gap-10 relative">
       <div className="flex flex-col gap-10 justify-center lg:flex-row lg:justify-around lg:items-start ">

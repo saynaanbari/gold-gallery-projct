@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import profile from "@/assets/svg/account.svg";
 import cart from "@/assets/svg/cart-shopping.svg";
@@ -7,8 +8,12 @@ import logo from "@/assets/images/Logo-1.webp";
 import Link from "next/link";
 import Nav from "./nav";
 import MobileMenu from "./mobile-menu";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+   const pathname = usePathname();
+   const hideHeader = ["/auth"];
+   if (hideHeader.includes(pathname)) return null;
   return (
     <header className="sticky top-0 left-0 z-70">
       <div className="w-full h-20 lg:h-22 bg-light shadow flex justify-between items-center px-5 md:px-10">
