@@ -46,14 +46,21 @@ export default function Header() {
           >
             <Image src={heart} alt="" fill className="object-cover" />
           </Link>
-          <Link
-            href="/auth"
-            className="relative w-6 h-6 lg:w-7 lg:h-7 cursor-pointer"
-          >
-            <Image src={profile} alt="" fill className="object-cover" />
-          </Link>
+
           <Link href="/cart" className="relative w-6 h-6 cursor-pointer">
             <Image src={cart} alt="" fill className="object-cover" />
+          </Link>
+          <Link href="/auth" className="relative cursor-pointer">
+            <Image
+              src={profile}
+              alt="ورود"
+              className="md:hidden"
+              width={28}
+              height={28}
+            />
+            <button className="hidden md:block text-xs text-gray font-bold border border-light-green px-3 py-1.5 rounded-sm cursor-pointer">
+              ورود | عضویت
+            </button>
           </Link>
         </div>
       </div>
