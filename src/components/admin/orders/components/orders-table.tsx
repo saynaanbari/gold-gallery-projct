@@ -1,77 +1,233 @@
-import { OrderType } from "@/types/order-type";
+// import { OrderType } from "../types/orders-type";
 
-export default function OrdersTable({ orders }: { orders: OrderType[] }) {
+// export default function OrdersTable({ orders }: { orders: OrderType[] }) {
+//   return (
+//     <div className="w-full shadow-lg overflow-x-auto">
+//       <table className="w-full min-w-200 mx-auto h-70">
+//         <thead className="bg-blue">
+//           <tr>
+//             <th className="border border-blue p-2 text-white text-sm">
+//               کد سفارش
+//             </th>
+//             {/* <th className="border border-blue p-2 text-white text-sm">
+//               عکس محصول
+//             </th> */}
+//             <th className="border border-blue p-2 text-white text-sm">
+//               نام مشتری
+//             </th>
+//             <th className="border border-blue p-2 text-white text-sm">آدرس</th>
+//             <th className="border border-blue p-2 text-white text-sm">
+//               تعداد آیتم ها
+//             </th>
+//             <th className="border border-blue p-2 text-white text-sm">
+//               مبلغ کل
+//             </th>
+//             <th className="border border-blue p-2 text-white text-sm">وضعیت</th>
+//             <th className="border border-blue p-2 text-white text-sm">
+//               وضعیت پرداخت
+//             </th>
+//           </tr>
+//         </thead>
+//         <tbody className="text-center">
+//           {orders.map((order: OrderType) => (
+//             <tr
+//               key={order._id}
+//               className="border border-blue text-xs font-bold"
+//             >
+//               <td className="border border-blue text-xs font-bold px-4">
+//                 <div>{order._id}</div>
+//               </td>
+//               <td className="border border-blue text-xs font-bold px-4">
+//                 <div>{order.shippingAddress.name}</div>
+//               </td>
+//               <td className="border border-blue text-xs font-bold px-4">
+//                 <div>{order.shippingAddress.address}</div>
+//               </td>
+//               <td className="border border-blue text-xs font-bold px-4">
+//                 <div>{order.orderItems.length} عدد</div>
+//               </td>
+//               <td className="border border-blue text-xs font-bold px-4">
+//                 <div>{order.totalPrice},000,000 تومان</div>
+//               </td>
+//               <td className="border border-blue text-xs font-bold px-4">
+//                 <div>
+//                   {order.status ? (
+//                     <div className="bg-[#ffb600] py-2 rounded-2xl">
+//                       در انتظار ارسال
+//                     </div>
+//                   ) : (
+//                     <div>ارسال شده</div>
+//                   )}
+//                 </div>
+//               </td>
+//               <td className="border border-blue text-xs font-bold px-4">
+//                 <div>{order.isPaid ? "پرداخت شده" : "پرداخت نشده"}</div>
+//               </td>
+//             </tr>
+//           ))}
+//         </tbody>
+//       </table>
+//     </div>
+//   );
+// }
+
+"use client";
+import { useState } from "react";
+import { OrderType } from "../types/orders-type";
+import toast from "react-hot-toast";
+import eye from "@/assets/svg/order-eye.svg";
+import pending from "@/assets/svg/order-pending.svg";
+import success from "@/assets/svg/order-success.svg";
+import Image from "next/image";
+import OrderDetailsModal from "./order-details-modal";
+import { changeOrderStatus } from "../services/status.service";
+
+export default function OrdersTable({
+  orders,
+  onOrderUpdate,
+}: {
+  orders: OrderType[];
+  onOrderUpdate?: () => void;
+}) {
+  const [loadingId, setLoadingId] = useState<string | null>(null);
+  const [selectedOrder, setSelectedOrder] = useState<OrderType | null>(null);
+
+  // تابع باز کردن مودال
+  const viewOrderDetails = (order: OrderType) => {
+    setSelectedOrder(order);
+  };
+
+  const updateStatus = async (orderId: string) => {
+    setLoadingId(orderId);
+    try {
+      await changeOrderStatus(orderId, "confirmed");
+      toast.success("سفارش تأیید شد");
+      if (onOrderUpdate) onOrderUpdate();
+    } catch (error) {
+      toast.error("خطا در تأیید سفارش");
+    } finally {
+      setLoadingId(null);
+    }
+  };
+
   return (
-    <div className="w-full shadow-lg overflow-x-auto">
-      <table className="w-full min-w-200 mx-auto h-70">
-        <thead className="bg-blue">
-          <tr>
-            <th className="border border-blue p-2 text-white text-sm">
-              کد سفارش
-            </th>
-            <th className="border border-blue p-2 text-white text-sm">
-              نام مشتری
-            </th>
-            <th className="border border-blue p-2 text-white text-sm">آدرس</th>
-            <th className="border border-blue p-2 text-white text-sm">
-              تعداد آیتم ها
-            </th>
-            <th className="border border-blue p-2 text-white text-sm">
-              مبلغ کل
-            </th>
-            <th className="border border-blue p-2 text-white text-sm">وضعیت</th>
-            <th className="border border-blue p-2 text-white text-sm">
-              وضعیت پرداخت
-            </th>
-          </tr>
-        </thead>
-        <tbody className="text-center">
-          {orders.map((order: OrderType) => (
-            <tr
-              key={order._id}
-              className="border border-blue text-xs font-bold"
-            >
-              <td className="border border-blue text-xs font-bold px-4">
-                <div>{order._id}</div>
-              </td>
-              <td className="border border-blue text-xs font-bold px-4">
-                <div>{order.shippingAddress.name}</div>
-              </td>
-              <td className="border border-blue text-xs font-bold px-4">
-                <div>{order.shippingAddress.address}</div>
-              </td>
-              <td className="border border-blue text-xs font-bold px-4">
-                <div>{order.orderItems.length} عدد</div>
-              </td>
-              <td className="border border-blue text-xs font-bold px-4">
-                <div>{order.totalPrice},000,000 تومان</div>
-              </td>
-              <td className="border border-blue font-bold px-6 text-[11px] lg:px-4 lg:text-xs">
-                <div>
-                  {order.status ? (
-                    <div className="bg-[#f8861b] py-2 rounded-2xl text-white">
-                      در انتظار ارسال
-                    </div>
-                  ) : (
-                    <div className="bg-green-600 py-2 rounded-2xl text-white">
-                      ارسال شده
-                    </div>
-                  )}
-                </div>
-              </td>
-              <td className="border border-blue text-xs font-bold px-4">
-                <div>
-                  {order.isPaid ? (
-                    <div className="text-green-700">پرداخت شده</div>
-                  ) : (
-                    <div className="text-red-600">پرداخت نشده</div>
-                  )}
-                </div>
-              </td>
+    <>
+      <div className="w-full shadow-lg overflow-x-auto">
+        <table className="w-full min-w-200 mx-auto h-70">
+          <thead className="bg-blue">
+            <tr>
+              <th className="border border-blue p-2 text-white text-sm">
+                کد سفارش
+              </th>
+              <th className="border border-blue p-2 text-white text-sm">
+                نام مشتری
+              </th>
+              <th className="border border-blue p-2 text-white text-sm">
+                آدرس
+              </th>
+              <th className="border border-blue p-2 text-white text-sm">
+                تعداد آیتم ها
+              </th>
+              <th className="border border-blue p-2 text-white text-sm">
+                مبلغ کل
+              </th>
+              <th className="border border-blue p-2 text-white text-sm">
+                وضعیت
+              </th>
+              <th className="border border-blue p-2 text-white text-sm">
+                عملیات
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody className="text-center">
+            {orders.map((order: OrderType) => (
+              <tr
+                key={order._id}
+                className="border border-blue text-xs font-bold"
+              >
+                <td className="border border-blue px-4">{order._id}</td>
+                <td className="border border-blue px-4">
+                  {order.shippingAddress.name}
+                </td>
+                <td className="border border-blue px-4">
+                  {order.shippingAddress.address}
+                </td>
+                <td className="border border-blue px-4">
+                  {order.orderItems.length} عدد
+                </td>
+                <td className="border border-blue px-4">
+                  {order.totalPrice.toLocaleString("FA-IR")} تومان
+                </td>
+
+                {/* وضعیت */}
+                <td className="border border-blue px-4">
+                  {order.status === "pending" ? (
+                    <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">
+                      در انتظار
+                    </span>
+                  ) : (
+                    <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">
+                      تأیید شده
+                    </span>
+                  )}
+                </td>
+
+                {/* عملیات */}
+                <td className="border border-blue px-2">
+                  <div className="flex justify-center items-center gap-2">
+                    {/* آیکون چشم */}
+                    <button onClick={() => viewOrderDetails(order)}>
+                      <Image
+                        src={eye}
+                        alt="جزئیات"
+                        width={20}
+                        height={20}
+                        className="cursor-pointer hover:opacity-70"
+                      />
+                    </button>
+
+                    {/* آیکون تأیید / تیک */}
+                    {order.status === "pending" ? (
+                      <button
+                        onClick={() => updateStatus(order._id)}
+                        disabled={loadingId === order._id}
+                      >
+                        {loadingId === order._id ? (
+                          <span className="text-xs">...</span>
+                        ) : (
+                          <Image
+                            src={pending}
+                            alt="تأیید"
+                            width={20}
+                            height={20}
+                            className="cursor-pointer hover:opacity-70"
+                          />
+                        )}
+                      </button>
+                    ) : (
+                      <Image
+                        src={success}
+                        alt="تأیید شده"
+                        width={20}
+                        height={20}
+                        className="opacity-100"
+                      />
+                    )}
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* مودال جزئیات سفارش */}
+      {selectedOrder && (
+        <OrderDetailsModal
+          order={selectedOrder}
+          onClose={() => setSelectedOrder(null)}
+        />
+      )}
+    </>
   );
 }
