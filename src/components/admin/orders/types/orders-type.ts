@@ -1,4 +1,4 @@
-import { ProductType } from "@/types/response-data-types";
+import { ProductType } from "@/types/product-type";
 
 export interface OrderType {
   shippingAddress: {
