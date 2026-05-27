@@ -153,7 +153,7 @@ export default function OrdersTable({
                   {order.shippingAddress.address}
                 </td>
                 <td className="border border-blue px-4">
-                  {order.orderItems.length} عدد
+                  {order.orderItems.length.toLocaleString('FA-IR')} عدد
                 </td>
                 <td className="border border-blue px-4">
                   {order.totalPrice.toLocaleString("FA-IR")} تومان

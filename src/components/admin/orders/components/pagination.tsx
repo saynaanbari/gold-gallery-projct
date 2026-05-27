@@ -32,7 +32,8 @@ export default function OrdersPagination({
         </Link>
       )}
       <div className="w-30 text-center font-bold text-sm">
-        صفحه {currentPage} از {totalPages}
+        صفحه {currentPage.toLocaleString("FA-IR")} از{" "}
+        {totalPages.toLocaleString("FA-IR")}
       </div>
 
       {currentPage === totalPages ? (
