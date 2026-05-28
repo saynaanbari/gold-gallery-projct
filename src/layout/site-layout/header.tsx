@@ -11,11 +11,14 @@ import MobileMenu from "./mobile-menu";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/context/authContext";
 import ProfileDropdown from "./profile-dropdown";
+import { useAppSelector } from "@/redux/hooks";
 
 export default function Header() {
-  const { token, isLoading } = useAuth();
+   const { token, isLoading } = useAuth();
    const pathname = usePathname();
-   const hideHeader = ["/auth"];
+   const hideHeader = ["/auth", "/payment", "/payment/success"];
+   const totalCount = useAppSelector((state) => state.cart.totalCount);
+
    if (hideHeader.includes(pathname)) return null;
   return (
     <header className="sticky top-0 left-0 z-70">
@@ -57,6 +60,11 @@ export default function Header() {
 
           <Link href="/cart" className="relative w-6 h-6 cursor-pointer">
             <Image src={cart} alt="" fill className="object-cover" />
+            {totalCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-olive-green text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+                {totalCount.toLocaleString("FA-IR")}
+              </span>
+            )}
           </Link>
           {isLoading ? (
             <div className="w-6 h-6 bg-gray-100 rounded-sm animate-pulse" />

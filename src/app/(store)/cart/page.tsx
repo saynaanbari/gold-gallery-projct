@@ -1,3 +1,9 @@
+import CartPage from "@/components/store/cart/components/cart";
+
 export default function Cart() {
-  return <div>صفحه سبد خرید</div>;
+  return (
+    <div>
+      <CartPage />
+    </div>
+  );
 }

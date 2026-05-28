@@ -6,11 +6,17 @@ import instagram from "@/assets/svg/instageram.svg";
 import { usePathname } from "next/navigation";
 
 export default function Footer() {
-  const pathname = usePathname();
-  const hideFooter = ["/auth"];
-  if (hideFooter.includes(pathname)) {
-    return null;
-  }
+ const pathname = usePathname();
+ const hideFooter = [
+   "/cart",
+   "/checkout",
+   "/payment",
+   "/auth",
+   "/payment/success",
+ ];
+ if (hideFooter.includes(pathname)) {
+   return null;
+ }
   return (
     <footer className="w-full bg-light-green px-15 pt-10 flex flex-col gap-10 relative">
       <div className="flex flex-col gap-10 justify-center lg:flex-row lg:justify-around lg:items-start ">
