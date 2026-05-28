@@ -1,76 +1,3 @@
-// import { OrderType } from "../types/orders-type";
-
-// export default function OrdersTable({ orders }: { orders: OrderType[] }) {
-//   return (
-//     <div className="w-full shadow-lg overflow-x-auto">
-//       <table className="w-full min-w-200 mx-auto h-70">
-//         <thead className="bg-blue">
-//           <tr>
-//             <th className="border border-blue p-2 text-white text-sm">
-//               کد سفارش
-//             </th>
-//             {/* <th className="border border-blue p-2 text-white text-sm">
-//               عکس محصول
-//             </th> */}
-//             <th className="border border-blue p-2 text-white text-sm">
-//               نام مشتری
-//             </th>
-//             <th className="border border-blue p-2 text-white text-sm">آدرس</th>
-//             <th className="border border-blue p-2 text-white text-sm">
-//               تعداد آیتم ها
-//             </th>
-//             <th className="border border-blue p-2 text-white text-sm">
-//               مبلغ کل
-//             </th>
-//             <th className="border border-blue p-2 text-white text-sm">وضعیت</th>
-//             <th className="border border-blue p-2 text-white text-sm">
-//               وضعیت پرداخت
-//             </th>
-//           </tr>
-//         </thead>
-//         <tbody className="text-center">
-//           {orders.map((order: OrderType) => (
-//             <tr
-//               key={order._id}
-//               className="border border-blue text-xs font-bold"
-//             >
-//               <td className="border border-blue text-xs font-bold px-4">
-//                 <div>{order._id}</div>
-//               </td>
-//               <td className="border border-blue text-xs font-bold px-4">
-//                 <div>{order.shippingAddress.name}</div>
-//               </td>
-//               <td className="border border-blue text-xs font-bold px-4">
-//                 <div>{order.shippingAddress.address}</div>
-//               </td>
-//               <td className="border border-blue text-xs font-bold px-4">
-//                 <div>{order.orderItems.length} عدد</div>
-//               </td>
-//               <td className="border border-blue text-xs font-bold px-4">
-//                 <div>{order.totalPrice},000,000 تومان</div>
-//               </td>
-//               <td className="border border-blue text-xs font-bold px-4">
-//                 <div>
-//                   {order.status ? (
-//                     <div className="bg-[#ffb600] py-2 rounded-2xl">
-//                       در انتظار ارسال
-//                     </div>
-//                   ) : (
-//                     <div>ارسال شده</div>
-//                   )}
-//                 </div>
-//               </td>
-//               <td className="border border-blue text-xs font-bold px-4">
-//                 <div>{order.isPaid ? "پرداخت شده" : "پرداخت نشده"}</div>
-//               </td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-//     </div>
-//   );
-// }
-
 "use client";
 import { useState } from "react";
 import { OrderType } from "../types/orders-type";
@@ -91,8 +18,6 @@ export default function OrdersTable({
 }) {
   const [loadingId, setLoadingId] = useState<string | null>(null);
   const [selectedOrder, setSelectedOrder] = useState<OrderType | null>(null);
-
-  // تابع باز کردن مودال
   const viewOrderDetails = (order: OrderType) => {
     setSelectedOrder(order);
   };
@@ -110,6 +35,11 @@ export default function OrdersTable({
     }
   };
 
+   const checkoutData =
+     typeof window !== "undefined"
+       ? JSON.parse(localStorage.getItem("checkoutForm") || "{}")
+       : {};
+
   return (
     <>
       <div className="w-full shadow-lg overflow-x-auto">
@@ -126,7 +56,7 @@ export default function OrdersTable({
                 آدرس
               </th>
               <th className="border border-blue p-2 text-white text-sm">
-                تعداد آیتم ها
+                روش پرداختی
               </th>
               <th className="border border-blue p-2 text-white text-sm">
                 مبلغ کل
@@ -153,13 +83,16 @@ export default function OrdersTable({
                   {order.shippingAddress.address}
                 </td>
                 <td className="border border-blue px-4">
-                  {order.orderItems.length.toLocaleString('FA-IR')} عدد
+                  {order.paymentMethod === "cash"
+                    ? "پرداخت در محل"
+                    : "پرداخت آنلاین"}
                 </td>
                 <td className="border border-blue px-4">
-                  {order.totalPrice.toLocaleString("FA-IR")} تومان
+                  {/* {order.totalPrice.toLocaleString("FA-IR")} تومان */}
+                  {(order.totalPrice + checkoutData.deliveryFee).toLocaleString(
+                    "FA-IR",
+                  )}
                 </td>
-
-                {/* وضعیت */}
                 <td className="border border-blue px-4">
                   {order.status === "pending" ? (
                     <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">
@@ -171,11 +104,8 @@ export default function OrdersTable({
                     </span>
                   )}
                 </td>
-
-                {/* عملیات */}
                 <td className="border border-blue px-2">
                   <div className="flex justify-center items-center gap-2">
-                    {/* آیکون چشم */}
                     <button onClick={() => viewOrderDetails(order)}>
                       <Image
                         src={eye}
@@ -185,8 +115,6 @@ export default function OrdersTable({
                         className="cursor-pointer hover:opacity-70"
                       />
                     </button>
-
-                    {/* آیکون تأیید / تیک */}
                     {order.status === "pending" ? (
                       <button
                         onClick={() => updateStatus(order._id)}
@@ -220,8 +148,6 @@ export default function OrdersTable({
           </tbody>
         </table>
       </div>
-
-      {/* مودال جزئیات سفارش */}
       {selectedOrder && (
         <OrderDetailsModal
           order={selectedOrder}
