@@ -28,7 +28,10 @@ export default function OrderDetailsModal({
       onClose();
     }, 200);
   };
-
+  const checkoutData =
+    typeof window !== "undefined"
+      ? JSON.parse(localStorage.getItem("checkoutForm") || "{}")
+      : {};
   return (
     <div>
       {isOpen && (
@@ -130,7 +133,11 @@ export default function OrderDetailsModal({
                             تعداد: {item.quantity.toLocaleString("FA-IR")}
                           </span>
                           <span className="text-gray text-xs font-bold">
-                            {item.price.toLocaleString("fa-IR")} تومان
+                            {/* {item.price.toLocaleString("fa-IR")} تومان */}
+                            {(item.price * item.quantity).toLocaleString(
+                              "fa-IR",
+                            )}
+                            تومان
                           </span>
                         </div>
                       </div>
@@ -143,7 +150,10 @@ export default function OrderDetailsModal({
                   جمع کل سفارشات:
                 </span>
                 <span className="font-bold text-light-brown text-lg">
-                  {order.totalPrice.toLocaleString("fa-IR")} تومان
+                  {/* {order.totalPrice.toLocaleString("fa-IR")} تومان */}
+                  {(order.totalPrice + checkoutData.deliveryFee).toLocaleString(
+                    "FA-IR",
+                  )}
                 </span>
               </div>
             </div>
