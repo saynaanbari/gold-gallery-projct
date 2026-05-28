@@ -48,7 +48,7 @@ export default function CartPage() {
   useEffect(() => {
     const token = Cookies.get("token");
     if (!token) {
-      router.push("/auth");
+      router.replace("/auth");
       return;
     }
     loadCart();
