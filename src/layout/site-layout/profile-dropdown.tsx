@@ -12,6 +12,8 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/context/authContext";
 import LogoutModal from "./logout-modal";
+import { useAppDispatch } from "@/redux/hooks";
+import { resetCart } from "@/redux/features/cart/cartSlice";
 
 export default function ProfileDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +21,7 @@ export default function ProfileDropdown() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const { refreshAuth } = useAuth();
+  const dispatch = useAppDispatch(); 
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -37,6 +40,7 @@ export default function ProfileDropdown() {
     Cookies.remove("token", { path: "/" });
     Cookies.remove("role", { path: "/" });
     Cookies.remove("refreshToken", { path: "/" });
+    dispatch(resetCart());
     refreshAuth();
     setIsOpen(false);
     router.push("/");

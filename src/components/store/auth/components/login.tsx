@@ -10,6 +10,8 @@ import { loginService } from "../services/login.service";
 import Cookies from "js-cookie";
 import toast from "react-hot-toast";
 import { useAuth } from "@/context/authContext";
+import { useAppDispatch } from "@/redux/hooks";
+import { fetchCart } from "@/redux/features/cart/cartSlice";
 
 export default function Login() {
   const searchParams = useSearchParams();
@@ -17,6 +19,7 @@ export default function Login() {
   const redirect = searchParams.get("redirect");
   const [showPassword, setShowPassword] = useState(false);
   const { refreshAuth } = useAuth();
+  const dispatch = useAppDispatch();
 
   const {
     register,
@@ -37,6 +40,7 @@ export default function Login() {
       Cookies.set("role", result.user.role, { expires: 1 });
       localStorage.setItem("name", result.user.name);
       refreshAuth();
+      dispatch(fetchCart());
       toast.success(`${result.user.name} عزیز خوش آمدی`);
       router.replace("/");
       console.log(data);
