@@ -1,3 +1,7 @@
+import PaymentGatewayPage from "@/components/store/payment/components/payment";
+
 export default function Payment() {
-  return <div>صفحه اجرای عملیات پرداخت</div>;
+  return <div>
+    <PaymentGatewayPage/>
+  </div>;
 }
