@@ -1,4 +1,4 @@
-
+"use client"
 import Image from "next/image";
 import heart from "@/assets/svg/heart-love-like.svg";
 import ProductGallery from "./product-gallery";
@@ -10,8 +10,43 @@ import packing from "@/assets/svg/packing.svg";
 import BreadCrumb from "./bread-crumb";
 import SingleProductDescription from "./description";
 import { ProductType } from "@/types/product-type";
+import QuantityButton from "@/shared/buttons/quantity-button";
+import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
+import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { fetchCart, addToCart } from "@/redux/features/cart/cartSlice";
 
 export default function SingleProduct({ item }: { item: ProductType }) {
+  const router = useRouter();
+  const dispatch = useAppDispatch();
+  const [isAdding, setIsAdding] = useState(false);
+
+  const cartItems = useAppSelector((state) => state.cart.items);
+  const cartItem = cartItems.find(
+    (cartItem: any) => cartItem.productId === item._id,
+  );
+  const quantity = cartItem?.quantity || 0;
+  const cartItemId = cartItem?._id || null;
+
+  const handleAddToCart = async () => {
+    const token = Cookies.get("token");
+
+    if (!token) {
+      router.push("/auth");
+      return;
+    }
+
+    setIsAdding(true);
+    try {
+      await dispatch(addToCart({ productId: item._id, quantity: 1 })).unwrap();
+      dispatch(fetchCart());
+    } catch (error) {
+      console.error("خطا در افزودن به سبد خرید", error);
+    } finally {
+      setIsAdding(false);
+    }
+  };
   return (
     <div className="w-full container mx-auto my-10">
       <div className=" flex flex-col gap-5 md:flex-row ">
@@ -127,9 +162,25 @@ export default function SingleProduct({ item }: { item: ProductType }) {
                   </div>
                 </div>
               </div>
-              <button className="w-full py-2.5 font-bold bg-light-cream rounded-md cursor-pointer text-white text-sm hover:bg-[#a79273]">
-                افزودن به سبد خرید
-              </button>
+              {quantity === 0 ? (
+                <button
+                  onClick={handleAddToCart}
+                  disabled={isAdding}
+                  className="w-full py-2.5 font-bold bg-light-cream rounded-md cursor-pointer text-white text-sm hover:bg-[#a79273] disabled:opacity-50"
+                >
+                  {isAdding ? "در حال افزودن..." : "افزودن به سبد خرید"}
+                </button>
+              ) : (
+                <div className="flex items-center justify-end">
+                  <div className="flex items-center gap-2 bg-light-cream px-4 py-2 rounded-md shadow">
+                    <QuantityButton
+                      productId={item._id}
+                      quantity={quantity}
+                      cartItemId={cartItemId}
+                    />
+                  </div>
+                </div>
+              )}
               <div className="w-full  flex flex-col gap-3">
                 <div className="flex items-center gap-2 cursor-pointer">
                   <Image
