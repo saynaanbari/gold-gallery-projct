@@ -125,7 +125,6 @@ export default function CartPage() {
                 const itemTotal = item.product.price * quantity;
                 return (
                   <div key={item._id} className="p-4">
-                    {/* موبایل */}
                     <div className="flex flex-col gap-4 md:hidden">
                       <div className="flex gap-4">
                         <div className="relative w-24 h-24 bg-gray-100 rounded-2xl overflow-hidden shrink-0">

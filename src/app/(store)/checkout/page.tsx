@@ -1,3 +1,9 @@
+import CheckoutPage from "@/components/store/checkout/components/checkout";
+
 export default function Checkout() {
-  return <div>صفحه پرداخت</div>;
+  return (
+    <div>
+      <CheckoutPage />
+    </div>
+  );
 }
