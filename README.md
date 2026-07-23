@@ -62,18 +62,35 @@ Customers can browse jewelry products, explore categories, view product details,
 
 ## Screenshots
 
-### 🛍️ Storefront
 
+### Home Page
 <p align="center">
 <img width="900" alt="gold-gallery-1" src="https://github.com/user-attachments/assets/a1a58ba7-16fa-4c40-8eb0-e609198e720e" />
-<img width="900" alt="gold-gallery-2" src="https://github.com/user-attachments/assets/15e29e0c-d1b2-41d8-b69f-30c054ed1fd2" />
-<img width="900" alt="gold-gallery-3" src="https://github.com/user-attachments/assets/2f1974fd-5b62-47af-9b44-c78983f679c3" />  
-<img width="900" alt="gold-gallery-4" src="https://github.com/user-attachments/assets/2bcfe121-12ef-4bf4-92ad-e83ca62a63e6" />
-<img width="900" alt="gold-gallery-5" src="https://github.com/user-attachments/assets/aa06a681-8508-4acb-929c-8e61f2d3a3a3" />
 </p>
 
 
-### 🔐 Authentication
+### Latest Products
+<p align="center">
+<img width="900" alt="gold-gallery-2" src="https://github.com/user-attachments/assets/15e29e0c-d1b2-41d8-b69f-30c054ed1fd2" />
+</p>
+
+### Product Details
+<p align="center">
+<img width="900" alt="gold-gallery-3" src="https://github.com/user-attachments/assets/2f1974fd-5b62-47af-9b44-c78983f679c3" /> 
+</p>
+
+### All Products
+  <p align="center">
+  <img width="900" alt="gold-gallery-4" src="https://github.com/user-attachments/assets/2bcfe121-12ef-4bf4-92ad-e83ca62a63e6" />
+  </p>
+
+### Shopping Cart
+    <p align="center">
+  <img width="900" alt="gold-gallery-5" src="https://github.com/user-attachments/assets/aa06a681-8508-4acb-929c-8e61f2d3a3a3" />
+   </p>
+
+
+### Login Page
 
 <p align="center">
   <img width="900" alt="gold-gallery-6" src="https://github.com/user-attachments/assets/980d0983-0ccc-4bc7-a6e8-850c3908ae99" />
