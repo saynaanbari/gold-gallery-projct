@@ -1,3 +1,4 @@
+
 # Gold Gallery | Jewelry E-Commerce Platform
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
@@ -20,9 +21,6 @@ Customers can browse jewelry products, explore categories, view product details,
 - Redux Toolkit
 - Axios
 - React Hook Form
-- Swiper
-- React Hot Toast
-- React Icons
 
 ## Features
 
@@ -67,7 +65,7 @@ Customers can browse jewelry products, explore categories, view product details,
 ### 🛍️ Storefront
 
 <p align="center">
-<img width="900" alt="gold-gallery-1" src="https://github.com/user-attachments/assets/a17d6e19-c4fe-4cfe-aaef-32ab8ae60d72" />
+<img width="900" alt="gold-gallery-1" src="https://github.com/user-attachments/assets/a1a58ba7-16fa-4c40-8eb0-e609198e720e" />
 <img width="900" alt="gold-gallery-2" src="https://github.com/user-attachments/assets/15e29e0c-d1b2-41d8-b69f-30c054ed1fd2" />
 <img width="900" alt="gold-gallery-3" src="https://github.com/user-attachments/assets/2f1974fd-5b62-47af-9b44-c78983f679c3" />  
 <img width="900" alt="gold-gallery-4" src="https://github.com/user-attachments/assets/2bcfe121-12ef-4bf4-92ad-e83ca62a63e6" />
@@ -84,8 +82,8 @@ Customers can browse jewelry products, explore categories, view product details,
 ### ⚙️ Admin Panel
 
 <p align="center">
- <img width="450" alt="gold-gallery-7" src="https://github.com/user-attachments/assets/2da69156-13c7-4c02-b8a2-3a5281b6ba72" />
  <img width="450" alt="gold-gallery-8" src="https://github.com/user-attachments/assets/d48163ef-9eb3-4040-8109-475b7d2fd90b" />
+ <img width="450" alt="gold-gallery-7" src="https://github.com/user-attachments/assets/2da69156-13c7-4c02-b8a2-3a5281b6ba72" />
 </p>
 
 <p align="center">
