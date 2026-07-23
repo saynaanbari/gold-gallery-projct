@@ -72,7 +72,7 @@ Customers can browse jewelry products, explore categories, view product details,
 </p>
 
 
-### Products Page
+### Latest Products
 <p align="center">
 <img width="900" alt="gold-gallery-2" src="https://github.com/user-attachments/assets/15e29e0c-d1b2-41d8-b69f-30c054ed1fd2" />
 </p>
@@ -82,7 +82,7 @@ Customers can browse jewelry products, explore categories, view product details,
 <img width="900" alt="gold-gallery-3" src="https://github.com/user-attachments/assets/2f1974fd-5b62-47af-9b44-c78983f679c3" /> 
 </p>
 
-### All Products
+### Products Page
   <p align="center">
   <img width="900" alt="gold-gallery-4" src="https://github.com/user-attachments/assets/2bcfe121-12ef-4bf4-92ad-e83ca62a63e6" />
   </p>
