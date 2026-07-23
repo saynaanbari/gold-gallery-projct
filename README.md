@@ -41,7 +41,7 @@ Customers can browse jewelry products, explore categories, view product details,
 
 - Admin authentication
 - Dashboard overview
-- Product management (Create, Read, Update, Delete)
+- Product management (Create, Edit, Delete)
 - Inventory management
 - Order management
 - Responsive admin dashboard
