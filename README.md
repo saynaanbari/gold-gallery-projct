@@ -103,11 +103,11 @@ Customers can browse jewelry products, explore categories, view product details,
 ### Admin Panel
 
 <p align="center">
- <img width="420" alt="gold-gallery-8" src="https://github.com/user-attachments/assets/d48163ef-9eb3-4040-8109-475b7d2fd90b" />
- <img width="420" alt="gold-gallery-7" src="https://github.com/user-attachments/assets/2da69156-13c7-4c02-b8a2-3a5281b6ba72" />
+ <img width="400" alt="gold-gallery-8" src="https://github.com/user-attachments/assets/d48163ef-9eb3-4040-8109-475b7d2fd90b" />
+ <img width="400" alt="gold-gallery-7" src="https://github.com/user-attachments/assets/2da69156-13c7-4c02-b8a2-3a5281b6ba72" />
 </p>
 
 <p align="center">
-<img width="420" alt="gold-gallery-9" src="https://github.com/user-attachments/assets/a798679a-0b39-4e4a-a1fc-94ce084ca131" />
-<img width="420" alt="gold-gallery-10" src="https://github.com/user-attachments/assets/db34acf3-588b-415c-8da2-790b5d66b977" />
+<img width="400" alt="gold-gallery-9" src="https://github.com/user-attachments/assets/a798679a-0b39-4e4a-a1fc-94ce084ca131" />
+<img width="400" alt="gold-gallery-10" src="https://github.com/user-attachments/assets/db34acf3-588b-415c-8da2-790b5d66b977" />
 </p>
