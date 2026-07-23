@@ -1,7 +1,6 @@
 # Gold Gallery | Jewelry E-Commerce Platform
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white)
@@ -61,40 +60,35 @@ Customers can browse jewelry products, explore categories, view product details,
 - Modern icon system with React Icons
 - Strongly typed with TypeScript
 - Responsive design
-- Scalable and maintainable project structure
+
 
 ## Screenshots
 
 ### 🛍️ Storefront
 
 <p align="center">
-  <img width="450" alt="gold-gallery-1" src="https://github.com/user-attachments/assets/fbdd5ac1-65d6-4147-b1fd-ebc36e30ec0c" />
-  <img width="450" alt="gold-gallery-2" src="https://github.com/user-attachments/assets/e5e5bd86-d851-4b23-a0c1-e0bed74e6dde" />
+<img width="900" alt="gold-gallery-1" src="https://github.com/user-attachments/assets/a17d6e19-c4fe-4cfe-aaef-32ab8ae60d72" />
+<img width="900" alt="gold-gallery-2" src="https://github.com/user-attachments/assets/15e29e0c-d1b2-41d8-b69f-30c054ed1fd2" />
+<img width="900" alt="gold-gallery-3" src="https://github.com/user-attachments/assets/2f1974fd-5b62-47af-9b44-c78983f679c3" />  
+<img width="900" alt="gold-gallery-4" src="https://github.com/user-attachments/assets/2bcfe121-12ef-4bf4-92ad-e83ca62a63e6" />
+<img width="900" alt="gold-gallery-5" src="https://github.com/user-attachments/assets/aa06a681-8508-4acb-929c-8e61f2d3a3a3" />
 </p>
 
-<p align="center">
-<img width="450" alt="gold-gallery-3" src="https://github.com/user-attachments/assets/098bb8d0-c29b-4ebd-9635-32958d8d4c40" />
-<img width="450" alt="gold-gallery-4" src="https://github.com/user-attachments/assets/4a18cf32-395b-4855-9833-57de6cd65974" />
-</p>
-
-<p align="center">
-  <img width="900" alt="gold-gallery-5" src="https://github.com/user-attachments/assets/7801b358-1808-4dd8-bd5a-b0049e35baa0" />
-</p>
 
 ### 🔐 Authentication
 
 <p align="center">
-  <img width="900" alt="gold-gallery-6" src="https://github.com/user-attachments/assets/17ec16c1-af36-4f20-acc7-ae2cb159aedb" />
+  <img width="900" alt="gold-gallery-6" src="https://github.com/user-attachments/assets/980d0983-0ccc-4bc7-a6e8-850c3908ae99" />
 </p>
 
 ### ⚙️ Admin Panel
 
 <p align="center">
-<img width="450" alt="gold-gallery-7" src="https://github.com/user-attachments/assets/85f9738b-c425-4790-b37a-b33e77c9170a" />
-<img width="450" alt="gold-gallery-8" src="https://github.com/user-attachments/assets/65ca0fbd-3191-42b9-9698-66a11e9d9404" />
+ <img width="450" alt="gold-gallery-7" src="https://github.com/user-attachments/assets/2da69156-13c7-4c02-b8a2-3a5281b6ba72" />
+ <img width="450" alt="gold-gallery-8" src="https://github.com/user-attachments/assets/d48163ef-9eb3-4040-8109-475b7d2fd90b" />
 </p>
 
 <p align="center">
-  <img width="450" alt="gold-gallery-9" src="https://github.com/user-attachments/assets/b7c77b22-7618-4d7d-85ca-ff7da328d3b1" />
-  <img width="450" alt="gold-gallery-10" src="https://github.com/user-attachments/assets/a2d24d53-515d-4b79-a4d9-eb8c8055d167" />
+<img width="450" alt="gold-gallery-9" src="https://github.com/user-attachments/assets/a798679a-0b39-4e4a-a1fc-94ce084ca131" />
+<img width="450" alt="gold-gallery-10" src="https://github.com/user-attachments/assets/db34acf3-588b-415c-8da2-790b5d66b977" />
 </p>
