@@ -100,7 +100,7 @@ Customers can browse jewelry products, explore categories, view product details,
   <img width="900" alt="gold-gallery-6" src="https://github.com/user-attachments/assets/980d0983-0ccc-4bc7-a6e8-850c3908ae99" />
 </p>
 
-### ⚙️ Admin Panel
+### Admin Panel
 
 <p align="center">
  <img width="420" alt="gold-gallery-8" src="https://github.com/user-attachments/assets/d48163ef-9eb3-4040-8109-475b7d2fd90b" />
