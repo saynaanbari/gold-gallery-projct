@@ -21,6 +21,9 @@ Customers can browse jewelry products, explore categories, view product details,
 - Redux Toolkit
 - Axios
 - React Hook Form
+- Swiper
+- React Hot Toast
+- React Icons
 
 ## Features
 
@@ -69,7 +72,7 @@ Customers can browse jewelry products, explore categories, view product details,
 </p>
 
 
-### Latest Products
+### Products Page
 <p align="center">
 <img width="900" alt="gold-gallery-2" src="https://github.com/user-attachments/assets/15e29e0c-d1b2-41d8-b69f-30c054ed1fd2" />
 </p>
@@ -84,10 +87,11 @@ Customers can browse jewelry products, explore categories, view product details,
   <img width="900" alt="gold-gallery-4" src="https://github.com/user-attachments/assets/2bcfe121-12ef-4bf4-92ad-e83ca62a63e6" />
   </p>
 
-### Shopping Cart
-    <p align="center">
-  <img width="900" alt="gold-gallery-5" src="https://github.com/user-attachments/assets/aa06a681-8508-4acb-929c-8e61f2d3a3a3" />
+  ### Shopping Cart
+  <p align="center">
+   <img width="900" alt="gold-gallery-5" src="https://github.com/user-attachments/assets/aa06a681-8508-4acb-929c-8e61f2d3a3a3" />
    </p>
+  </p>
 
 
 ### Login Page
@@ -99,11 +103,11 @@ Customers can browse jewelry products, explore categories, view product details,
 ### ⚙️ Admin Panel
 
 <p align="center">
- <img width="450" alt="gold-gallery-8" src="https://github.com/user-attachments/assets/d48163ef-9eb3-4040-8109-475b7d2fd90b" />
- <img width="450" alt="gold-gallery-7" src="https://github.com/user-attachments/assets/2da69156-13c7-4c02-b8a2-3a5281b6ba72" />
+ <img width="420" alt="gold-gallery-8" src="https://github.com/user-attachments/assets/d48163ef-9eb3-4040-8109-475b7d2fd90b" />
+ <img width="420" alt="gold-gallery-7" src="https://github.com/user-attachments/assets/2da69156-13c7-4c02-b8a2-3a5281b6ba72" />
 </p>
 
 <p align="center">
-<img width="450" alt="gold-gallery-9" src="https://github.com/user-attachments/assets/a798679a-0b39-4e4a-a1fc-94ce084ca131" />
-<img width="450" alt="gold-gallery-10" src="https://github.com/user-attachments/assets/db34acf3-588b-415c-8da2-790b5d66b977" />
+<img width="420" alt="gold-gallery-9" src="https://github.com/user-attachments/assets/a798679a-0b39-4e4a-a1fc-94ce084ca131" />
+<img width="420" alt="gold-gallery-10" src="https://github.com/user-attachments/assets/db34acf3-588b-415c-8da2-790b5d66b977" />
 </p>
